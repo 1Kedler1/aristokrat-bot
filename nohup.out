@@ -7,3 +7,116 @@ WARNING: This is a development server. Do not use it in a production deployment.
  * Running on http://10.0.3.115:8080
 Press CTRL+C to quit
 [2026-04-02 21:23:01] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: 3b4a40c30f79dc858d74e56a9eff2eb8).
+127.0.0.1 - - [02/Apr/2026 21:43:09] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [02/Apr/2026 21:43:09] "GET /favicon.ico HTTP/1.1" 404 -
+[2026-04-02 21:45:30] [ERROR   ] discord.app_commands.tree: Ignoring exception in command 'destek-kur'
+Traceback (most recent call last):
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/app_commands/commands.py", line 859, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/aristokrat-bot/main_aristokrat.py", line 237, in destek_kur
+    await interaction.response.send_message("✅ Destek sistemi aktif edildi.", ephemeral=True)
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/interactions.py", line 1085, in send_message
+    data = await adapter.create_interaction_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/webhook/async_.py", line 226, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 40060): Interaction has already been acknowledged.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/app_commands/tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/app_commands/commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/app_commands/commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'destek-kur' raised an exception: HTTPException: 400 Bad Request (error code: 40060): Interaction has already been acknowledged.
+[2026-04-02 21:45:37] [ERROR   ] discord.app_commands.tree: Ignoring exception in command 'destek-kur'
+Traceback (most recent call last):
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/app_commands/commands.py", line 859, in _do_call
+    return await self._callback(interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/aristokrat-bot/main_aristokrat.py", line 237, in destek_kur
+    await interaction.response.send_message("✅ Destek sistemi aktif edildi.", ephemeral=True)
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/interactions.py", line 1085, in send_message
+    data = await adapter.create_interaction_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/webhook/async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/app_commands/tree.py", line 1302, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/app_commands/commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/app_commands/commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'destek-kur' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+[2026-04-02 21:46:01] [ERROR   ] discord.ui.view: Ignoring exception in view <DestekButonu timeout=None children=1> for item <Button style=<ButtonStyle.success: 3> url=None disabled=False label='Destek Talebi Oluştur' emoji=<PartialEmoji animated=False name='🛡️' id=None> row=None sku_id=None id=None>
+Traceback (most recent call last):
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/ui/view.py", line 598, in _scheduled_task
+    await item.callback(interaction)
+  File "/workspaces/aristokrat-bot/main_aristokrat.py", line 74, in destek_ac
+    await interaction.response.defer(ephemeral=True)
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/interactions.py", line 892, in defer
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/webhook/async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+[2026-04-02 21:46:04] [ERROR   ] discord.ui.view: Ignoring exception in view <DestekButonu timeout=None children=1> for item <Button style=<ButtonStyle.success: 3> url=None disabled=False label='Destek Talebi Oluştur' emoji=<PartialEmoji animated=False name='🛡️' id=None> row=None sku_id=None id=None>
+Traceback (most recent call last):
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/ui/view.py", line 598, in _scheduled_task
+    await item.callback(interaction)
+  File "/workspaces/aristokrat-bot/main_aristokrat.py", line 74, in destek_ac
+    await interaction.response.defer(ephemeral=True)
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/interactions.py", line 892, in defer
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/webhook/async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+[2026-04-02 21:46:14] [ERROR   ] discord.ui.view: Ignoring exception in view <DestekButonu timeout=None children=1> for item <Button style=<ButtonStyle.success: 3> url=None disabled=False label='Destek Talebi Oluştur' emoji=<PartialEmoji animated=False name='🛡️' id=None> row=None sku_id=None id=None>
+Traceback (most recent call last):
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/ui/view.py", line 598, in _scheduled_task
+    await item.callback(interaction)
+  File "/workspaces/aristokrat-bot/main_aristokrat.py", line 74, in destek_ac
+    await interaction.response.defer(ephemeral=True)
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/interactions.py", line 892, in defer
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/webhook/async_.py", line 226, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 40060): Interaction has already been acknowledged.
+[2026-04-02 21:46:20] [ERROR   ] discord.ui.view: Ignoring exception in view <KapatButonu timeout=None children=1> for item <Button style=<ButtonStyle.danger: 4> url=None disabled=False label='Talebi Kapat' emoji=<PartialEmoji animated=False name='🔒' id=None> row=None sku_id=None id=None>
+Traceback (most recent call last):
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/ui/view.py", line 598, in _scheduled_task
+    await item.callback(interaction)
+  File "/workspaces/aristokrat-bot/main_aristokrat.py", line 64, in destek_kapat
+    await interaction.response.send_message(embed=embed)
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/interactions.py", line 1085, in send_message
+    data = await adapter.create_interaction_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/webhook/async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+[2026-04-02 21:53:13] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 3b4a40c30f79dc858d74e56a9eff2eb8.
+[2026-04-02 22:12:31] [ERROR   ] discord.ui.view: Ignoring exception in view <KapatButonu timeout=None children=1> for item <Button style=<ButtonStyle.danger: 4> url=None disabled=False label='Talebi Kapat' emoji=<PartialEmoji animated=False name='🔒' id=None> row=None sku_id=None id=None>
+Traceback (most recent call last):
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/ui/view.py", line 598, in _scheduled_task
+    await item.callback(interaction)
+  File "/workspaces/aristokrat-bot/main_aristokrat.py", line 64, in destek_kapat
+    await interaction.response.send_message(embed=embed)
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/interactions.py", line 1085, in send_message
+    data = await adapter.create_interaction_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.python/current/lib/python3.12/site-packages/discord/webhook/async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
