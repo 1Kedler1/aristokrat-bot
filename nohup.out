@@ -1,0 +1,9 @@
+[2026-04-02 21:23:00] [INFO    ] discord.client: logging in using static token
+ * Serving Flask app 'main_aristokrat'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.0.3.115:8080
+Press CTRL+C to quit
+[2026-04-02 21:23:01] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: 3b4a40c30f79dc858d74e56a9eff2eb8).

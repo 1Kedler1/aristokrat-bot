@@ -28,8 +28,7 @@ def keep_alive():
 # ==========================================
 #               AYARLAR
 # ==========================================
-TOKEN = 'MTQ4ODcxMTkzOTY3NTkxODMzNg.GMMwDV.fMHo9AwqVeTHOCr_fz2LCKTP_jbZHYsnFLVTzQ'
-
+TOKEN = os.environ.get("DISCORD_TOKEN") # Buraya şifreyi yazma, aynen böyle kalsın!
 # Kayıt & Hoş Geldin Ayarları
 KAYITSIZ_ROL_ID = 1488679958216839278
 KAYITLI_ROL_ID = 1488679806152478872
@@ -291,7 +290,25 @@ async def on_ready():
     print(f'Tüm Sistemler (Kayıt, Moderasyon, Destek, Bilgi) Tek Dosyada Aktif.')
     print(f'------------------------------')
 
-# Web sunucusunu başlat
-keep_alive()
-# Botu çalıştır
-bot.run(TOKEN)
+# ==========================================
+#          RENDER & 7/24 ÇALIŞTIRMA
+# ==========================================
+if __name__ == "__main__":
+    # Render'ın portunu yakala (Yoksa 10000 kullan)
+    port = int(os.environ.get("PORT", 10000))
+    
+    # Flask sunucusunu botla çakışmaması için ayrı kolda başlat
+    def run_flask():
+        app.run(host='0.0.0.0', port=port)
+
+    # Web sunucusunu başlat (Arka planda)
+    Thread(target=run_flask).start()
+    
+    # Botu ana kolda başlat
+    if TOKEN:
+        try:
+            bot.run(TOKEN)
+        except Exception as e:
+            print(f"❌ Bot giriş yaparken hata oluştu: {e}")
+    else:
+        print("❌ HATA: DISCORD_TOKEN bulunamadı! Render panelinde 'Environment Variables' kısmını kontrol et.")
